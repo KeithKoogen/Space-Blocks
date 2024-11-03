@@ -8,6 +8,8 @@ public class Block_Script : MonoBehaviour
     public int positionY;
     public int positionX;
 
+    // public static event Action<int, int, GameObject> SendIndividualBlockPositionAtStart;
+
 
     void UpdateBlockPosition()
     {
@@ -17,14 +19,37 @@ public class Block_Script : MonoBehaviour
 
 
     }
+    private void Awake()
+    {
+        UpdateBlockPosition();
+
+
+
+
+
+    }
+
+    private void OnEnable()
+    {
+
+
+    }
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        // SendIndividualBlockPositionAtStart.Invoke(positionY, positionX);
         UpdateBlockPosition();
+        // SendIndividualBlockPositionAtStart.Invoke(positionY, positionX, this.gameObject);
+
+
+
+
+
+
+
 
 
 

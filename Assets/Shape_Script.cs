@@ -5,7 +5,7 @@ public class Shape_Script : MonoBehaviour
 {
     float fallSpeed = 0.4f;
     float timer = 0;
-    bool allowmove = false;
+    // bool allowmove = false;
 
 
     void ShapecanMove(GameObject[,] blockArray)
@@ -16,12 +16,25 @@ public class Shape_Script : MonoBehaviour
         }
 
         int lowestBlockinShape = 0;
-        int checkCounter = 0;
-        int blockCounter = 0;
+        // int checkCounter = 0;
+        // int blockCounter = 0;
         int noObstruction = 0;
 
 
         Block_Script[] childBlocks = GetComponentsInChildren<Block_Script>();
+
+        foreach (Block_Script block in childBlocks)
+        {
+
+
+
+            blockArray[block.positionY, block.positionX] = block.gameObject;
+            // print(blockArray[block.positionY, block.positionX]);
+
+
+
+        }
+
 
 
 
@@ -35,99 +48,134 @@ public class Shape_Script : MonoBehaviour
             if (lowestBlockinShape == 0)
             {
                 lowestBlockinShape = block.positionY;
+
             }
             else if (lowestBlockinShape > block.positionY)
             {
                 lowestBlockinShape = block.positionY;
 
+
             }
 
         }
+
 
         // check if all the blocks at the lowest point dont have anything obstruction them
-        foreach (Block_Script block in childBlocks)
-        {
-            if (lowestBlockinShape == block.positionY)
-            {
-                ++blockCounter;
+        // foreach (Block_Script block in childBlocks)
+        // {
+        //     if (lowestBlockinShape == block.positionY)
+        //     {
+        //         ++blockCounter;
 
-                if (blockArray[block.positionY - 1, block.positionX] == null)
-                {
-                    checkCounter++;
-                }
+        //         if (blockArray[block.positionY - 1, block.positionX] == null)
+        //         {
+        //             checkCounter++;
+        //         }
 
-            }
+        //     }
 
 
-        }
+        // }
 
 
         // if all the blocks in the shape dont have anything obstructing the shape must move
 
 
-        if ((blockCounter == checkCounter) && (blockCounter != 0) && lowestBlockinShape > 1)
+        // if ((blockCounter == checkCounter) && (blockCounter != 0) && lowestBlockinShape > 1)
+        // {
+
+
+
+
+        //     // before we move the block we should store the blocks we want to move first in a temporaray variable
+        //     // then we should make all those current locations null
+        //     // when it stops again we should s
+
+
+        // }
+        // else
+        // {
+        //     foreach (Block_Script block in childBlocks)
+        //     {
+
+
+
+        //         blockArray[block.positionY, block.positionX] = block.gameObject;
+
+
+
+        //     }
+
+        // }
+
+
+        foreach (Block_Script block in childBlocks)
         {
-
-
-            foreach (Block_Script block in childBlocks)
+            if (lowestBlockinShape > 1)
             {
-                if (blockArray[block.positionY - 1, block.positionX] == null || blockArray[block.positionY - 1, block.positionX].transform.parent == gameObject)
+                if (blockArray[block.positionY - 1, block.positionX] == null)
                 {
                     ++noObstruction;
                 }
-            }
 
-            if (noObstruction == gameObject.transform.childCount && noObstruction != 0)
-            {
-
-                foreach (Block_Script block in childBlocks)
+                else
                 {
 
 
 
+                    if (blockArray[block.positionY - 1, block.positionX].transform.parent == gameObject.transform)
+                    {
+                        ++noObstruction;
 
-                    blockArray[block.positionY, block.positionX] = null;
 
 
-
+                    }
 
                 }
-                print($"no obstruction {noObstruction}");
-                print($"child count {gameObject.transform.childCount}");
 
-                //check if all the blocks in the shape are not obstructed by any other block, if the block is in front and belongs to the same parent we ignore it
-                // allowmove = true;
-                MoveShape();
+
+
+
             }
-            else
+
+
+
+
+
+        }
+
+
+        if (noObstruction == gameObject.transform.childCount && noObstruction != 0 && lowestBlockinShape > 1)
+        {
+
+            foreach (Block_Script block in childBlocks)
             {
-                foreach (Block_Script block in childBlocks)
-                {
 
 
 
-                    blockArray[block.positionY, block.positionX] = block.gameObject;
+
+                blockArray[block.positionY, block.positionX] = null;
 
 
 
-                }
+
             }
 
-            // before we move the block we should store the blocks we want to move first in a temporaray variable
-            // then we should make all those current locations null
-            // when it stops again we should s
+
+            //check if all the blocks in the shape are not obstructed by any other block, if the block is in front and belongs to the same parent we ignore it
+            // allowmove = true;
+            MoveShape();
+
+            // foreach (Block_Script block in childBlocks)
+            // {
 
 
 
+            //     blockArray[block.positionY, block.positionX] = block.gameObject;
 
 
 
-
-
-
-
-
-
+            // }
 
         }
         else
@@ -142,7 +190,6 @@ public class Shape_Script : MonoBehaviour
 
 
             }
-
         }
     }
     void MoveShape()
@@ -159,9 +206,18 @@ public class Shape_Script : MonoBehaviour
 
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnEnable()
     {
         BlockArray_Script.SendArray += ShapecanMove;
+    }
+    void Start()
+    {
+
+
+
+
+
+
 
     }
 

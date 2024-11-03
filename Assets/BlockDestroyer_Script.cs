@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class BlockDestroyer_Script : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     int blockRowCounter = 0;
+
     void FindBlocksToDestroy(GameObject[,] blockArray)
     {
         for (int i = 0; i < 20; i++)
@@ -18,8 +20,25 @@ public class BlockDestroyer_Script : MonoBehaviour
                 {
                     for (int k = 0; k < 10; k++)
                     {
+
+                        // reset blocks if there are are the same
+                        for (int a = 0; a < 20; a++)
+                        {
+                            for (int b = 0; b < 10; b++)
+                            {
+                                if (blockArray[a, b] == blockArray[i, k] && a != i && b != k)
+                                {
+                                    blockArray[a, b] = null;
+                                }
+
+                            }
+
+                        }
                         Destroy(blockArray[i, k]);
                         blockArray[i, k] = null;
+
+
+
 
                     }
                 }
