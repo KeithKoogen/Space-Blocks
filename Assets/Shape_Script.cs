@@ -1,10 +1,15 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Shape_Script : MonoBehaviour
 {
     float fallSpeed = 0.4f;
     float timer = 0;
+    int hasStoppedCount = 0;
+    public static event Action InstantiateNewShape;
+
+
     // bool allowmove = false;
 
 
@@ -164,7 +169,7 @@ public class Shape_Script : MonoBehaviour
 
             //check if all the blocks in the shape are not obstructed by any other block, if the block is in front and belongs to the same parent we ignore it
             // allowmove = true;
-            MoveShape();
+            MoveDown();
 
             // foreach (Block_Script block in childBlocks)
             // {
@@ -180,6 +185,7 @@ public class Shape_Script : MonoBehaviour
         }
         else
         {
+
             foreach (Block_Script block in childBlocks)
             {
 
@@ -190,9 +196,19 @@ public class Shape_Script : MonoBehaviour
 
 
             }
+
+
+            ++hasStoppedCount;
+            if (hasStoppedCount == 1)
+            {
+                InstantiateNewShape.Invoke();
+
+            }
+
+
         }
     }
-    void MoveShape()
+    void MoveDown()
     {
         timer += Time.deltaTime;
 
@@ -212,6 +228,7 @@ public class Shape_Script : MonoBehaviour
     }
     void Start()
     {
+        print(gameObject.GetInstanceID());
 
 
 
