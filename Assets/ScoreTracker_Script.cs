@@ -12,7 +12,10 @@ public class ScoreTracker_Script : MonoBehaviour
     public static event Action<int> UpdateLevelDisplay;
     void Start()
     {
+
         BlockDestroyer_Script.NumberofRowsDestroyed += UpdateScore;
+
+        UpdateTargetDisplay?.Invoke(target);
 
     }
 
@@ -38,6 +41,8 @@ public class ScoreTracker_Script : MonoBehaviour
 
 
 
+
+
     }
 
 
@@ -45,6 +50,7 @@ public class ScoreTracker_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
 
     }
 }
