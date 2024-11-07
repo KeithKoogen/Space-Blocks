@@ -29,6 +29,7 @@ public class BlockArray_Script : MonoBehaviour
 
 
 
+
     }
     private void OnEnable()
     {
@@ -77,23 +78,23 @@ public class BlockArray_Script : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        for (int i = 0; i < 20; i++)
-        {
-            string str = "";
-            for (int j = 0; j < 10; j++)
-            {
-                if (blockArray[i, j] == null)
-                {
-                    str += "0";
-                }
-                else
-                {
-                    str += "x";
-                }
-            }
-            print(str);
+        // for (int i = 0; i < 20; i++)
+        // {
+        //     string str = "";
+        //     for (int j = 0; j < 10; j++)
+        //     {
+        //         if (blockArray[i, j] == null)
+        //         {
+        //             str += "0";
+        //         }
+        //         else
+        //         {
+        //             str += "x";
+        //         }
+        //     }
+        //     print(str);
 
-        }
+        // }
 
     }
 

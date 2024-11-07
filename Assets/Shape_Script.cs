@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shape_Script : MonoBehaviour
 {
-    float fallSpeed = 0.4f;
+    public float fallSpeed = 0.4f;
     float timer = 0;
     int hasStoppedCount = 0;
     public static event Action InstantiateNewShape;
@@ -20,29 +20,18 @@ public class Shape_Script : MonoBehaviour
             Destroy(gameObject);
         }
 
-        int lowestBlockinShape = 0;
-        // int checkCounter = 0;
-        // int blockCounter = 0;
+        int lowestBlockinShape = 100;
+        int mostLeftBlockinShape = 100;
+        int mostRightBlockinShape = 100;
         int noObstruction = 0;
 
 
         Block_Script[] childBlocks = GetComponentsInChildren<Block_Script>();
 
-        foreach (Block_Script block in childBlocks)
-        {
-
-
-
-            blockArray[block.positionY, block.positionX] = block.gameObject;
-            // print(blockArray[block.positionY, block.positionX]);
-
-
-
-        }
-
-
-
-
+        // foreach (Block_Script block in childBlocks)
+        // {
+        //     blockArray[block.positionY, block.positionX] = block.gameObject;
+        // }
 
 
 
@@ -50,7 +39,7 @@ public class Shape_Script : MonoBehaviour
         // Loop through each block and find the lowest block in the shape
         foreach (Block_Script block in childBlocks)
         {
-            if (lowestBlockinShape == 0)
+            if (lowestBlockinShape == 100)
             {
                 lowestBlockinShape = block.positionY;
 
@@ -58,60 +47,83 @@ public class Shape_Script : MonoBehaviour
             else if (lowestBlockinShape > block.positionY)
             {
                 lowestBlockinShape = block.positionY;
+            }
+        }
+
+        // Loop through each block and find the most left block in the shape
+
+        foreach (Block_Script block in childBlocks)
+        {
+            if (mostLeftBlockinShape == 100)
+            {
+                mostLeftBlockinShape = block.positionX;
+
+            }
+            else if (mostLeftBlockinShape > block.positionX)
+            {
+                mostLeftBlockinShape = block.positionX;
+            }
+        }
+
+        // Loop through each block and find the most right block in the shape
+
+        foreach (Block_Script block in childBlocks)
+        {
+            if (mostRightBlockinShape == 100)
+            {
+                mostRightBlockinShape = block.positionX;
+
+            }
+            else if (mostRightBlockinShape < block.positionX)
+            {
+                mostRightBlockinShape = block.positionX;
+            }
+        }
 
 
+
+
+        // if a part of the shape ends up outside the boundary move it back inside
+        // this accounts for shapes that are rotated, because when they are rotated the fall outside of the boundary some times
+
+        if (mostLeftBlockinShape < 0 || mostRightBlockinShape > 9)
+        {
+            if (mostLeftBlockinShape < 0)
+            {
+                foreach (Block_Script block in childBlocks)
+                {
+                    if (block.positionX != mostLeftBlockinShape)
+                    {
+                        blockArray[block.positionY, block.positionX] = null;
+
+                    }
+
+
+
+                }
+                transform.position += new Vector3(1, 0, 0);
+            }
+
+
+            if (mostRightBlockinShape > 9)
+            {
+                foreach (Block_Script block in childBlocks)
+                {
+
+                    if (block.positionX != mostRightBlockinShape)
+                    {
+                        blockArray[block.positionY, block.positionX] = null;
+
+                    }
+
+                }
+                transform.position += new Vector3(-1, 0, 0);
             }
 
         }
 
 
-        // check if all the blocks at the lowest point dont have anything obstruction them
-        // foreach (Block_Script block in childBlocks)
-        // {
-        //     if (lowestBlockinShape == block.positionY)
-        //     {
-        //         ++blockCounter;
 
-        //         if (blockArray[block.positionY - 1, block.positionX] == null)
-        //         {
-        //             checkCounter++;
-        //         }
-
-        //     }
-
-
-        // }
-
-
-        // if all the blocks in the shape dont have anything obstructing the shape must move
-
-
-        // if ((blockCounter == checkCounter) && (blockCounter != 0) && lowestBlockinShape > 1)
-        // {
-
-
-
-
-        //     // before we move the block we should store the blocks we want to move first in a temporaray variable
-        //     // then we should make all those current locations null
-        //     // when it stops again we should s
-
-
-        // }
-        // else
-        // {
-        //     foreach (Block_Script block in childBlocks)
-        //     {
-
-
-
-        //         blockArray[block.positionY, block.positionX] = block.gameObject;
-
-
-
-        //     }
-
-        // }
 
 
         foreach (Block_Script block in childBlocks)
@@ -122,32 +134,22 @@ public class Shape_Script : MonoBehaviour
                 {
                     ++noObstruction;
                 }
-
                 else
                 {
-
-
-
                     if (blockArray[block.positionY - 1, block.positionX].transform.parent == gameObject.transform)
                     {
                         ++noObstruction;
-
-
-
                     }
-
                 }
-
-
-
-
             }
 
-
-
-
-
         }
+
+
+
+
+
+
 
 
         if (noObstruction == gameObject.transform.childCount && noObstruction != 0 && lowestBlockinShape > 1)
@@ -156,33 +158,18 @@ public class Shape_Script : MonoBehaviour
             foreach (Block_Script block in childBlocks)
             {
 
-
-
-
                 blockArray[block.positionY, block.positionX] = null;
-
-
-
 
             }
 
 
-            //check if all the blocks in the shape are not obstructed by any other block, if the block is in front and belongs to the same parent we ignore it
-            // allowmove = true;
             MoveDown();
 
-            // foreach (Block_Script block in childBlocks)
-            // {
 
-
-
-            //     blockArray[block.positionY, block.positionX] = block.gameObject;
-
-
-
-            // }
 
         }
+
+
         else
         {
 
@@ -196,6 +183,8 @@ public class Shape_Script : MonoBehaviour
 
 
             }
+
+
 
 
             ++hasStoppedCount;
@@ -217,23 +206,16 @@ public class Shape_Script : MonoBehaviour
         {
             transform.position += new Vector3(0, -1, 0);
             timer = 0;
-
         }
-
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     private void OnEnable()
     {
         BlockArray_Script.SendArray += ShapecanMove;
     }
+
     void Start()
     {
-        print(gameObject.GetInstanceID());
-
-
-
-
-
 
 
     }
@@ -244,7 +226,7 @@ public class Shape_Script : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
 

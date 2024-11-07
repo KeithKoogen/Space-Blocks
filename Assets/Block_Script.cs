@@ -11,6 +11,7 @@ public class Block_Script : MonoBehaviour
     // public static event Action<int, int, GameObject> SendIndividualBlockPositionAtStart;
 
 
+
     void UpdateBlockPosition()
     {
 
@@ -19,9 +20,33 @@ public class Block_Script : MonoBehaviour
 
 
     }
+
+    // void BlockCanMove(GameObject[,] blockArray)
+    // {
+    //     if (positionY > 1 && blockArray[positionY - 1, positionX] == null)
+    //     {
+    //         if ((blockArray[positionY, positionX - 1] == null || blockArray[positionY, positionX - 1].transform.parent != gameObject.transform.parent)
+    //         &&
+    //         (blockArray[positionY, positionX + 1] == null || blockArray[positionY, positionX + 1].transform.parent != gameObject.transform.parent) &&
+    //        (blockArray[positionY + 1, positionX].transform.parent != gameObject.transform.parent))
+    //         {
+    //             blockArray[positionY, positionX] = null;
+    //             gameObject.transform.position += new Vector3(0, -1, 0);
+
+
+
+    //         }
+    //     }
+
+    // }
+
+
+
     private void Awake()
     {
+        // BlockArray_Script.SendArray += BlockCanMove;
         UpdateBlockPosition();
+
 
 
 
@@ -31,6 +56,8 @@ public class Block_Script : MonoBehaviour
 
     private void OnEnable()
     {
+        // UpdateBlockPosition();
+
 
 
     }

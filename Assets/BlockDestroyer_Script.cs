@@ -5,6 +5,8 @@ public class BlockDestroyer_Script : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     int blockRowCounter = 0;
+    int rowsDestroyedcounter = 0;
+    public static event Action<int> NumberofRowsDestroyed;
 
     void FindBlocksToDestroy(GameObject[,] blockArray)
     {
@@ -18,6 +20,7 @@ public class BlockDestroyer_Script : MonoBehaviour
                 }
                 if (blockRowCounter == 10)
                 {
+                    ++rowsDestroyedcounter;
                     for (int k = 0; k < 10; k++)
                     {
 
@@ -51,6 +54,8 @@ public class BlockDestroyer_Script : MonoBehaviour
         }
 
 
+
+
     }
     void Start()
     {
@@ -61,6 +66,13 @@ public class BlockDestroyer_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rowsDestroyedcounter > 0)
+        {
+            NumberofRowsDestroyed?.Invoke(rowsDestroyedcounter);
+            print(rowsDestroyedcounter);
+            rowsDestroyedcounter = 0;
+
+        }
 
     }
 }
