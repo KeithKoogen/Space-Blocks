@@ -69,7 +69,6 @@ public class BlockDestroyer_Script : MonoBehaviour
         if (rowsDestroyedcounter > 0)
         {
             NumberofRowsDestroyed?.Invoke(rowsDestroyedcounter);
-            print(rowsDestroyedcounter);
             rowsDestroyedcounter = 0;
 
         }

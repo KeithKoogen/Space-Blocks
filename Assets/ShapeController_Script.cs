@@ -174,6 +174,18 @@ public class ShapeController_Script : MonoBehaviour
         }
 
 
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            Time.timeScale = 5;
+        }
+
+        if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+            Time.timeScale = 1;
+        }
+
+
+
 
 
 

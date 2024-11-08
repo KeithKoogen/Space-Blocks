@@ -5,8 +5,8 @@ public class BlockArray_Script : MonoBehaviour
 
 {
     public static event Action<GameObject[,]> SendArray;
-    int maxY = 20;
-    int maxX = 10;
+    int maxY = 30;
+    int maxX = 12;
     public GameObject[,] blockArray;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
