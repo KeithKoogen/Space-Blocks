@@ -20,6 +20,7 @@ public class Shape_Script : MonoBehaviour
             Destroy(gameObject);
         }
 
+
         int lowestBlockinShape = 100;
         int mostLeftBlockinShape = 100;
         int mostRightBlockinShape = 100;
@@ -147,6 +148,87 @@ public class Shape_Script : MonoBehaviour
 
 
 
+        // check to see if there is space between blocks and make blocks move down if there is
+
+        foreach (Block_Script block in childBlocks)
+        {
+            int sameBlocksOnLine = 0;
+            int blockswithspacesbelowinshape = 0;
+            if (blockArray[block.positionY, block.positionX] != null)
+            {
+                if (block.positionY != lowestBlockinShape && block.positionY > 1)
+                {
+                    if (blockArray[block.positionY - 1, block.positionX] == null)
+                    {
+                        sameBlocksOnLine = 0;
+                        blockswithspacesbelowinshape = 0;
+                        for (int i = 0; i < 10; i++)
+                        {
+
+                            if (blockArray[block.positionY, i] != null && blockArray[block.positionY, i].transform.parent == gameObject)
+                            {
+                                ++sameBlocksOnLine;
+
+                                if (i != block.positionX && blockArray[block.positionY - 1, i] == null)
+                                {
+                                    ++blockswithspacesbelowinshape;
+
+                                }
+
+                            }
+                        }
+
+                        if (sameBlocksOnLine == blockswithspacesbelowinshape)
+                        {
+                            blockArray[block.positionY, block.positionX].transform.position += new Vector3(0, -1, 0);
+
+                            // for (int i = 0; i < 10; i++)
+                            // {
+                            //     if (blockArray[block.positionY, i] != null)
+                            //     {
+
+
+                            //         if (blockArray[block.positionY, i].transform.parent == gameObject)
+                            //         {
+
+
+
+                            //             blockArray[block.positionY - 1, i] = blockArray[block.positionY, i];
+                            //             blockArray[block.positionY, i] = null;
+
+
+
+
+
+
+
+                            //         }
+
+
+                            //     }
+
+
+                            // }
+                        }
+
+
+                    }
+
+
+                }
+
+
+            }
+
+
+        }
+
+
+
+
+
+
+
 
 
 
@@ -160,9 +242,8 @@ public class Shape_Script : MonoBehaviour
 
                 blockArray[block.positionY, block.positionX] = null;
 
+
             }
-
-
             MoveDown();
 
 
@@ -175,6 +256,8 @@ public class Shape_Script : MonoBehaviour
 
             foreach (Block_Script block in childBlocks)
             {
+
+
 
 
 
@@ -193,6 +276,7 @@ public class Shape_Script : MonoBehaviour
                 InstantiateNewShape.Invoke();
 
             }
+
 
 
         }

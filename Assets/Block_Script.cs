@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Block_Script : MonoBehaviour
 {
-    int OffsetY = 9;
+    int OffsetY = 10;
     int OffsetX = 6;
     public int positionY;
     public int positionX;
