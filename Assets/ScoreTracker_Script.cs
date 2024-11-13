@@ -53,4 +53,13 @@ public class ScoreTracker_Script : MonoBehaviour
 
 
     }
+    private void OnDisable()
+    {
+        BlockDestroyer_Script.NumberofRowsDestroyed -= UpdateScore;
+
+    }
+    private void OnDestroy()
+    {
+
+    }
 }

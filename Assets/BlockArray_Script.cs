@@ -20,11 +20,7 @@ public class BlockArray_Script : MonoBehaviour
 
     }
 
-    private void OnEnable()
-    {
 
-
-    }
 
     void Start()
     {
@@ -77,10 +73,7 @@ public class BlockArray_Script : MonoBehaviour
 
     }
 
-    private void OnDisable()
-    {
 
-    }
 
     private void OnDestroy()
     {

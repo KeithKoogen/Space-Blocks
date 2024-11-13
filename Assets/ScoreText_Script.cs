@@ -25,4 +25,9 @@ public class ScoreText_Script : MonoBehaviour
 
 
     }
+    private void OnDestroy()
+    {
+        ScoreTracker_Script.UpdateScoreDisplay -= UpdateScore;
+
+    }
 }

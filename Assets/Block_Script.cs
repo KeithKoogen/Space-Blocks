@@ -112,6 +112,7 @@ public class Block_Script : MonoBehaviour
 
 
         }
+        ShapeInstantiator_Script.ActivateGameOverScreen -= GameisOver;
 
 
 

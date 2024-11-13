@@ -109,7 +109,7 @@ public class BlockDestroyer_Script : MonoBehaviour
 
         if (lineDestroyed == true)
         {
-            // SendArraytoCheckforHolesAfterDestroyLine?.Invoke(blockArray);
+            SendArraytoCheckforHolesAfterDestroyLine?.Invoke(blockArray);
 
             NumberofRowsDestroyed.Invoke(rowsDestroyedcounter);
             rowsDestroyedcounter = 0;
@@ -140,5 +140,10 @@ public class BlockDestroyer_Script : MonoBehaviour
     {
 
 
+    }
+
+    private void OnDestroy()
+    {
+        Shape_Script.SendArraytoBlockDestroyer -= FindBlocksToDestroy;
     }
 }

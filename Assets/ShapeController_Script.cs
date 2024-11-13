@@ -1,10 +1,12 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class ShapeController_Script : MonoBehaviour
 {
     GameObject controlledGameobject;
     GameObject[,] CurrentblockArray;
+    public float gameSpeed = 0.5f;
     int MaxBlockLeft = 0;
     int MaxBlockRight = 9;
     // public DirectionofShape directionofshape;
@@ -12,6 +14,11 @@ public class ShapeController_Script : MonoBehaviour
     {
         left,
         right
+    }
+    void UpdateGameSpeedWhenLevelChanges(int level)
+    {
+        gameSpeed += (float)level * 0.2f;
+
     }
 
 
@@ -176,12 +183,12 @@ public class ShapeController_Script : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Time.timeScale = 5;
+            Time.timeScale = gameSpeed + 5;
         }
 
         if (Input.GetKeyUp(KeyCode.DownArrow))
         {
-            Time.timeScale = 1;
+            Time.timeScale = gameSpeed;
         }
 
 
@@ -203,6 +210,7 @@ public class ShapeController_Script : MonoBehaviour
     {
         BlockArray_Script.SendArray += PassBlockArraytoController;
         ShapeInstantiator_Script.SendCurrentShapeToController += PassCurrentShapeToController;
+        ScoreTracker_Script.UpdateLevelDisplay += UpdateGameSpeedWhenLevelChanges;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

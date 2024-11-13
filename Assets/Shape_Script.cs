@@ -264,7 +264,7 @@ public class Shape_Script : MonoBehaviour
 
                                 if (blockArray[block.positionY, i] != null && blockArray[block.positionY, i].transform.parent == blockArray[block.positionY, block.positionX].transform.parent)
                                 {
-                                    print("test");
+
 
 
                                     ++sameBlocksOnLine;
@@ -280,7 +280,7 @@ public class Shape_Script : MonoBehaviour
 
                             if (sameBlocksOnLine == blockswithspacesbelowinshape && sameBlocksOnLine != 0)
                             {
-                                print("test 2");
+
 
 
 
@@ -368,8 +368,9 @@ public class Shape_Script : MonoBehaviour
 
     void Start()
     {
-        // BlockDestroyer_Script.SendArraytoCheckforHolesAfterDestroyLine += FillBlockwithHoles;
+
         BlockArray_Script.SendArray += FillBlockwithHoles;
+        BlockDestroyer_Script.SendArraytoCheckforHolesAfterDestroyLine += FillBlockwithHoles;
 
 
 
@@ -378,6 +379,9 @@ public class Shape_Script : MonoBehaviour
     private void OnDestroy()
     {
         BlockArray_Script.SendArray -= ShapecanMove;
+        BlockArray_Script.SendArray -= FillBlockwithHoles;
+        BlockDestroyer_Script.SendArraytoCheckforHolesAfterDestroyLine -= FillBlockwithHoles;
+
 
     }
 
