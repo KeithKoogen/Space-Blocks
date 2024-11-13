@@ -5,57 +5,30 @@ public class BlockArray_Script : MonoBehaviour
 
 {
     public static event Action<GameObject[,]> SendArray;
+
     int maxY = 30;
     int maxX = 12;
     public GameObject[,] blockArray;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    // void SetInitialBlockPositioninArray(int y, int x, GameObject block)
-    // {
-    //     blockArray[y, x] = block;
-
-    //     print($"y: {y} x: {x} {block}");
-
-
-    // }
 
     private void Awake()
     {
         blockArray = new GameObject[maxY, maxX];
-        // Block_Script.SendIndividualBlockPositionAtStart += SetInitialBlockPositioninArray;
 
-
-
-
-
+        Block_Script.RemoveBlock += RemoveDestroyedBlockfromArray;
 
 
     }
+
     private void OnEnable()
     {
+
 
     }
 
     void Start()
     {
         SendArray.Invoke(blockArray);
-        // for (int i = 0; i < 20; i++)
-        // {
-        //     string str = "";
-        //     for (int j = 0; j < 10; j++)
-        //     {
-        //         if (blockArray[i, j] == null)
-        //         {
-        //             str += "0";
-        //         }
-        //         else
-        //         {
-        //             str += "x";
-        //         }
-        //     }
-        //     print(str);
-
-        // }
 
 
 
@@ -65,6 +38,12 @@ public class BlockArray_Script : MonoBehaviour
 
 
 
+
+    }
+    void RemoveDestroyedBlockfromArray(int positionY, int positionX)
+    {
+
+        blockArray[positionY, positionX] = null;
 
 
     }
@@ -98,7 +77,16 @@ public class BlockArray_Script : MonoBehaviour
 
     }
 
+    private void OnDisable()
+    {
 
+    }
+
+    private void OnDestroy()
+    {
+        Block_Script.RemoveBlock -= RemoveDestroyedBlockfromArray;
+
+    }
 
 
 

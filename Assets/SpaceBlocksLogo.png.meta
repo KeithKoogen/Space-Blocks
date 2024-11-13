@@ -1,0 +1,949 @@
+fileFormatVersion: 2
+guid: b7360e9e793de423bbafc882d732b10d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2474193661905348802
+    second: SpaceBlocksLogo_0
+  - first:
+      213: 6459396123829533015
+    second: SpaceBlocksLogo_1
+  - first:
+      213: 2973268509238199270
+    second: SpaceBlocksLogo_2
+  - first:
+      213: -1250269541194418523
+    second: SpaceBlocksLogo_3
+  - first:
+      213: -5207848264818964459
+    second: SpaceBlocksLogo_4
+  - first:
+      213: -7186110479179983974
+    second: SpaceBlocksLogo_5
+  - first:
+      213: 4030833188859900176
+    second: SpaceBlocksLogo_6
+  - first:
+      213: -4774275972536729277
+    second: SpaceBlocksLogo_7
+  - first:
+      213: -4143536091970874564
+    second: SpaceBlocksLogo_8
+  - first:
+      213: 7925460210242626144
+    second: SpaceBlocksLogo_9
+  - first:
+      213: 1553027054482503457
+    second: SpaceBlocksLogo_10
+  - first:
+      213: 6716073857445397199
+    second: SpaceBlocksLogo_11
+  - first:
+      213: -3276997178017344133
+    second: SpaceBlocksLogo_12
+  - first:
+      213: -5741204586355510964
+    second: SpaceBlocksLogo_13
+  - first:
+      213: -8668527813516663079
+    second: SpaceBlocksLogo_14
+  - first:
+      213: 6264073506046942927
+    second: SpaceBlocksLogo_15
+  - first:
+      213: 3388884749935605755
+    second: SpaceBlocksLogo_16
+  - first:
+      213: 7371743633933848625
+    second: SpaceBlocksLogo_17
+  - first:
+      213: 8337701116592830209
+    second: SpaceBlocksLogo_18
+  - first:
+      213: 3516243278213153511
+    second: SpaceBlocksLogo_19
+  - first:
+      213: -260235580034420846
+    second: SpaceBlocksLogo_20
+  - first:
+      213: 3272847033347885760
+    second: SpaceBlocksLogo_21
+  - first:
+      213: -368245218727803907
+    second: SpaceBlocksLogo_22
+  - first:
+      213: 1988479735538951588
+    second: SpaceBlocksLogo_23
+  - first:
+      213: -3494799884333625203
+    second: SpaceBlocksLogo_24
+  - first:
+      213: -8740137749879799081
+    second: SpaceBlocksLogo_25
+  - first:
+      213: -3105201474398533561
+    second: SpaceBlocksLogo_26
+  - first:
+      213: -1781240944467608279
+    second: SpaceBlocksLogo_27
+  - first:
+      213: -8658316049795121942
+    second: SpaceBlocksLogo_28
+  - first:
+      213: 3885685527128558515
+    second: SpaceBlocksLogo_29
+  - first:
+      213: 474315025680485186
+    second: SpaceBlocksLogo_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 236
+        width: 153
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c82463d60a165220800000000000000
+      internalID: 2474193661905348802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 236
+        width: 155
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759f4602d8264a950800000000000000
+      internalID: 6459396123829533015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_2
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 236
+        width: 154
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e38ff2c4fb234920800000000000000
+      internalID: 2973268509238199270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_3
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 236
+        width: 155
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a6bd9bf97626aee0800000000000000
+      internalID: -1250269541194418523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_4
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 236
+        width: 153
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 518c45378910ab7b0800000000000000
+      internalID: -5207848264818964459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 128
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a93d3c3c79ec54c90800000000000000
+      internalID: -7186110479179983974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_6
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 64
+        width: 129
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01179d2dd6560f730800000000000000
+      internalID: 4030833188859900176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_7
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 64
+        width: 129
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34104455c4d5ebdb0800000000000000
+      internalID: -4774275972536729277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_8
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 64
+        width: 129
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c33d014b0e33f76c0800000000000000
+      internalID: -4143536091970874564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_9
+      rect:
+        serializedVersion: 2
+        x: 549
+        y: 64
+        width: 129
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06221010214ecfd60800000000000000
+      internalID: 7925460210242626144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_10
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 64
+        width: 128
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1273005b0e57d8510800000000000000
+      internalID: 1553027054482503457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc2025e0799443d50800000000000000
+      internalID: 6716073857445397199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_12
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 0
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b75915acd64c582d0800000000000000
+      internalID: -3276997178017344133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_13
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 0
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c41bf6fc8d42350b0800000000000000
+      internalID: -5741204586355510964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_14
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d6eeb5a1e333b780800000000000000
+      internalID: -8668527813516663079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_15
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 0
+        width: 7
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fce1dde4aa57ee650800000000000000
+      internalID: 6264073506046942927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_16
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 0
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf776a899bcb70f20800000000000000
+      internalID: 3388884749935605755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_17
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 0
+        width: 40
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130dfd327c1bd4660800000000000000
+      internalID: 7371743633933848625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_18
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 0
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 107b4e19df675b370800000000000000
+      internalID: 8337701116592830209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_19
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 0
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e200c5b1a43cc030800000000000000
+      internalID: 3516243278213153511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_20
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 0
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f61266e15736cf0800000000000000
+      internalID: -260235580034420846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_21
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ca44ea590d7b6d20800000000000000
+      internalID: 3272847033347885760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_22
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 0
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df34e73bceab3eaf0800000000000000
+      internalID: -368245218727803907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_23
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 0
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a5acd7b8cf789b10800000000000000
+      internalID: 1988479735538951588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_24
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 0
+        width: 44
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d80d73d750aff7fc0800000000000000
+      internalID: -3494799884333625203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_25
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d2ce62160bc4b680800000000000000
+      internalID: -8740137749879799081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_26
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 0
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 748c47a06bb18e4d0800000000000000
+      internalID: -3105201474398533561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_27
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 0
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d70a56cc2c747e0800000000000000
+      internalID: -1781240944467608279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_28
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 0
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aecf5ea2d6b77d780800000000000000
+      internalID: -8658316049795121942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_29
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 0
+        width: 35
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bbcf51566abce530800000000000000
+      internalID: 3885685527128558515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpaceBlocksLogo_30
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 0
+        width: 38
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24bc059b00b159600800000000000000
+      internalID: 474315025680485186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpaceBlocksLogo_0: 2474193661905348802
+      SpaceBlocksLogo_1: 6459396123829533015
+      SpaceBlocksLogo_10: 1553027054482503457
+      SpaceBlocksLogo_11: 6716073857445397199
+      SpaceBlocksLogo_12: -3276997178017344133
+      SpaceBlocksLogo_13: -5741204586355510964
+      SpaceBlocksLogo_14: -8668527813516663079
+      SpaceBlocksLogo_15: 6264073506046942927
+      SpaceBlocksLogo_16: 3388884749935605755
+      SpaceBlocksLogo_17: 7371743633933848625
+      SpaceBlocksLogo_18: 8337701116592830209
+      SpaceBlocksLogo_19: 3516243278213153511
+      SpaceBlocksLogo_2: 2973268509238199270
+      SpaceBlocksLogo_20: -260235580034420846
+      SpaceBlocksLogo_21: 3272847033347885760
+      SpaceBlocksLogo_22: -368245218727803907
+      SpaceBlocksLogo_23: 1988479735538951588
+      SpaceBlocksLogo_24: -3494799884333625203
+      SpaceBlocksLogo_25: -8740137749879799081
+      SpaceBlocksLogo_26: -3105201474398533561
+      SpaceBlocksLogo_27: -1781240944467608279
+      SpaceBlocksLogo_28: -8658316049795121942
+      SpaceBlocksLogo_29: 3885685527128558515
+      SpaceBlocksLogo_3: -1250269541194418523
+      SpaceBlocksLogo_30: 474315025680485186
+      SpaceBlocksLogo_4: -5207848264818964459
+      SpaceBlocksLogo_5: -7186110479179983974
+      SpaceBlocksLogo_6: 4030833188859900176
+      SpaceBlocksLogo_7: -4774275972536729277
+      SpaceBlocksLogo_8: -4143536091970874564
+      SpaceBlocksLogo_9: 7925460210242626144
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

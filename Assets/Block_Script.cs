@@ -7,45 +7,38 @@ public class Block_Script : MonoBehaviour
     int OffsetX = 6;
     public int positionY;
     public int positionX;
+    public static event Action<int, int> RemoveBlock;
+    bool gameIsOverChecker = false;
 
-    // public static event Action<int, int, GameObject> SendIndividualBlockPositionAtStart;
+
+
+
 
 
 
     void UpdateBlockPosition()
     {
+        if (gameObject != null)
+        {
+            positionX = Mathf.RoundToInt(transform.position.x) + OffsetX;
+            positionY = Mathf.RoundToInt(transform.position.y) + OffsetY;
 
-        positionX = Mathf.RoundToInt(transform.position.x) + OffsetX;
-        positionY = Mathf.RoundToInt(transform.position.y) + OffsetY;
+        }
+
+
 
 
     }
 
-    // void BlockCanMove(GameObject[,] blockArray)
-    // {
-    //     if (positionY > 1 && blockArray[positionY - 1, positionX] == null)
-    //     {
-    //         if ((blockArray[positionY, positionX - 1] == null || blockArray[positionY, positionX - 1].transform.parent != gameObject.transform.parent)
-    //         &&
-    //         (blockArray[positionY, positionX + 1] == null || blockArray[positionY, positionX + 1].transform.parent != gameObject.transform.parent) &&
-    //        (blockArray[positionY + 1, positionX].transform.parent != gameObject.transform.parent))
-    //         {
-    //             blockArray[positionY, positionX] = null;
-    //             gameObject.transform.position += new Vector3(0, -1, 0);
 
-
-
-    //         }
-    //     }
-
-    // }
 
 
 
     private void Awake()
     {
-        // BlockArray_Script.SendArray += BlockCanMove;
+
         UpdateBlockPosition();
+        ShapeInstantiator_Script.ActivateGameOverScreen += GameisOver;
 
 
 
@@ -56,7 +49,7 @@ public class Block_Script : MonoBehaviour
 
     private void OnEnable()
     {
-        // UpdateBlockPosition();
+
 
 
 
@@ -64,12 +57,11 @@ public class Block_Script : MonoBehaviour
 
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
-        // SendIndividualBlockPositionAtStart.Invoke(positionY, positionX);
+
         UpdateBlockPosition();
-        // SendIndividualBlockPositionAtStart.Invoke(positionY, positionX, this.gameObject);
 
 
 
@@ -79,7 +71,10 @@ public class Block_Script : MonoBehaviour
 
 
 
-
+    }
+    void GameisOver()
+    {
+        gameIsOverChecker = true;
     }
 
     // Update is called once per frame
@@ -93,9 +88,40 @@ public class Block_Script : MonoBehaviour
 
 
     }
+    private void OnDisable()
+    {
+
+
+
+
+
+
+
+
+
+
+    }
+
+
 
     private void OnDestroy()
     {
+        if (gameIsOverChecker == false)
+        {
+            RemoveBlock.Invoke(positionY, positionX);
+
+
+        }
+
+
+
+
+
+
+
+
+
+
 
     }
 }

@@ -11,18 +11,49 @@ public class ShapeInstantiator_Script : MonoBehaviour
     GameObject currentGameObject;
 
     public static event Action<GameObject> SendCurrentShapeToController;
+    public static event Action ActivateGameOverScreen;
+    bool canInstantiate = true;
+    private void Awake()
+    {
+        BlockArray_Script.SendArray += CheckifTopBlockfilled;
+    }
 
     void ShapeInstantiotor()
     {
 
-        currentGameObject = Instantiate(Shape1[UnityEngine.Random.Range(0, Shape1.Length)], this.gameObject.transform.position, this.gameObject.transform.rotation);
-        // currentGameObject.name = gameObjectNumber.ToString();
-        // gameObjectNumber++;
+        if (canInstantiate == true)
+        {
+            currentGameObject = Instantiate(Shape1[UnityEngine.Random.Range(0, Shape1.Length)], this.gameObject.transform.position, this.gameObject.transform.rotation);
+            // currentGameObject.name = gameObjectNumber.ToString();
+            // gameObjectNumber++;
 
-        SendCurrentShapeToController.Invoke(currentGameObject);
+            SendCurrentShapeToController.Invoke(currentGameObject);
+
+        }
+        else
+        {
+            SendCurrentShapeToController.Invoke(null);
+            ActivateGameOverScreen.Invoke();
+
+        }
 
 
 
+
+
+
+    }
+
+    void CheckifTopBlockfilled(GameObject[,] blockArray)
+    {
+        for (int x = 0; x < 10; x++)
+        {
+            if (blockArray[21, x] != null)
+            {
+                canInstantiate = false;
+            }
+
+        }
 
 
     }
@@ -31,6 +62,7 @@ public class ShapeInstantiator_Script : MonoBehaviour
         Shape_Script.InstantiateNewShape += ShapeInstantiotor;
 
         ShapeInstantiotor();
+
 
 
 
@@ -46,5 +78,11 @@ public class ShapeInstantiator_Script : MonoBehaviour
 
 
 
+    }
+
+    private void OnDestroy()
+    {
+        Shape_Script.InstantiateNewShape -= ShapeInstantiotor;
+        BlockArray_Script.SendArray -= CheckifTopBlockfilled;
     }
 }

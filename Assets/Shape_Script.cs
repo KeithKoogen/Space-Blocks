@@ -8,6 +8,7 @@ public class Shape_Script : MonoBehaviour
     float timer = 0;
     int hasStoppedCount = 0;
     public static event Action InstantiateNewShape;
+    public static event Action<GameObject[,]> SendArraytoBlockDestroyer;
 
 
     // bool allowmove = false;
@@ -150,78 +151,7 @@ public class Shape_Script : MonoBehaviour
 
         // check to see if there is space between blocks and make blocks move down if there is
 
-        foreach (Block_Script block in childBlocks)
-        {
-            int sameBlocksOnLine = 0;
-            int blockswithspacesbelowinshape = 0;
-            if (blockArray[block.positionY, block.positionX] != null)
-            {
-                if (block.positionY != lowestBlockinShape && block.positionY > 1)
-                {
-                    if (blockArray[block.positionY - 1, block.positionX] == null)
-                    {
-                        sameBlocksOnLine = 0;
-                        blockswithspacesbelowinshape = 0;
-                        for (int i = 0; i < 10; i++)
-                        {
 
-                            if (blockArray[block.positionY, i] != null && blockArray[block.positionY, i].transform.parent == gameObject)
-                            {
-                                ++sameBlocksOnLine;
-
-                                if (i != block.positionX && blockArray[block.positionY - 1, i] == null)
-                                {
-                                    ++blockswithspacesbelowinshape;
-
-                                }
-
-                            }
-                        }
-
-                        if (sameBlocksOnLine == blockswithspacesbelowinshape)
-                        {
-                            blockArray[block.positionY, block.positionX].transform.position += new Vector3(0, -1, 0);
-
-                            // for (int i = 0; i < 10; i++)
-                            // {
-                            //     if (blockArray[block.positionY, i] != null)
-                            //     {
-
-
-                            //         if (blockArray[block.positionY, i].transform.parent == gameObject)
-                            //         {
-
-
-
-                            //             blockArray[block.positionY - 1, i] = blockArray[block.positionY, i];
-                            //             blockArray[block.positionY, i] = null;
-
-
-
-
-
-
-
-                            //         }
-
-
-                            //     }
-
-
-                            // }
-                        }
-
-
-                    }
-
-
-                }
-
-
-            }
-
-
-        }
 
 
 
@@ -270,16 +200,153 @@ public class Shape_Script : MonoBehaviour
 
 
 
+
+
             ++hasStoppedCount;
             if (hasStoppedCount == 1)
             {
+
+                SendArraytoBlockDestroyer.Invoke(blockArray);
+
                 InstantiateNewShape.Invoke();
 
             }
 
 
 
+
+
         }
+    }
+
+
+    void FillBlockwithHoles(GameObject[,] blockArray)
+    {
+
+
+
+
+
+        if (this)
+        {
+            Block_Script[] childBlocks = GetComponentsInChildren<Block_Script>();
+            int lowestBlockinShape = 100;
+            bool blockhasmoved = false;
+
+            foreach (Block_Script block in childBlocks)
+            {
+                if (lowestBlockinShape == 100)
+                {
+                    lowestBlockinShape = block.positionY;
+
+                }
+                else if (lowestBlockinShape > block.positionY)
+                {
+                    lowestBlockinShape = block.positionY;
+                }
+            }
+
+            foreach (Block_Script block in childBlocks)
+            {
+                int sameBlocksOnLine = 0;
+                int blockswithspacesbelowinshape = 0;
+                if (blockArray[block.positionY, block.positionX] != null)
+                {
+                    if (block.positionY != lowestBlockinShape && block.positionY > 1)
+                    {
+                        if (blockArray[block.positionY - 1, block.positionX] == null)
+                        {
+                            sameBlocksOnLine = 0;
+                            blockswithspacesbelowinshape = 0;
+
+                            for (int i = 0; i < 10; i++)
+                            {
+
+                                if (blockArray[block.positionY, i] != null && blockArray[block.positionY, i].transform.parent == blockArray[block.positionY, block.positionX].transform.parent)
+                                {
+                                    print("test");
+
+
+                                    ++sameBlocksOnLine;
+
+                                    if (blockArray[block.positionY - 1, i] == null)
+                                    {
+                                        ++blockswithspacesbelowinshape;
+
+                                    }
+
+                                }
+                            }
+
+                            if (sameBlocksOnLine == blockswithspacesbelowinshape && sameBlocksOnLine != 0)
+                            {
+                                print("test 2");
+
+
+
+                                for (int i = 0; i < 10; i++)
+                                {
+                                    if (blockArray[block.positionY, i] != null)
+                                    {
+
+
+                                        if (blockArray[block.positionY, i]?.transform.parent == blockArray[block.positionY, block.positionX]?.transform.parent)
+                                        {
+                                            if (block.positionY > 1)
+                                            {
+                                                int k = block.positionY;
+                                                while (blockArray?[k - 1, i] == null && k > 1)
+                                                {
+                                                    if (blockArray[k, i] != null)
+                                                    {
+
+                                                        blockArray[k - 1, i] = blockArray[k, i];
+
+                                                        blockArray[k, i].transform.position += new Vector3(0, -1, 0);
+                                                        blockhasmoved = true;
+
+
+                                                        blockArray[k, i] = null;
+
+
+                                                    }
+                                                    --k;
+
+                                                }
+
+                                            }
+
+                                        }
+
+                                    }
+
+                                }
+                            }
+
+                            if (blockhasmoved == true)
+                            {
+                                SendArraytoBlockDestroyer.Invoke(blockArray);
+                                blockhasmoved = false;
+                            }
+                            // else
+                            // {
+                            //     SendArraytoBlockDestroyer.Invoke(blockArray);
+
+                            // }
+
+
+                        }
+
+
+                    }
+
+
+                }
+
+
+            }
+        }
+
     }
     void MoveDown()
     {
@@ -296,10 +363,14 @@ public class Shape_Script : MonoBehaviour
     private void OnEnable()
     {
         BlockArray_Script.SendArray += ShapecanMove;
+
     }
 
     void Start()
     {
+        // BlockDestroyer_Script.SendArraytoCheckforHolesAfterDestroyLine += FillBlockwithHoles;
+        BlockArray_Script.SendArray += FillBlockwithHoles;
+
 
 
     }

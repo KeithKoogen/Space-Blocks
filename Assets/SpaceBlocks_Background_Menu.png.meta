@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 587d57551fd7d4e4bb876706cd9f5fe1
+guid: 5257bed9f1bbc40dc85d0bee9e7f4cc0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9167032844257683098
-    second: Tetris_Background_Stars_0
+      213: 8856535001433483103
+    second: SpaceBlocks_Background_Menu_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tetris_Background_Stars_0
+      name: SpaceBlocks_Background_Menu_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9661568dc7d73f70800000000000000
-      internalID: 9167032844257683098
+      spriteID: f57a14de8abb8ea70800000000000000
+      internalID: 8856535001433483103
       vertices: []
       indices: 
       edges: []
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Tetris_Background_Stars_0: 9167032844257683098
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
