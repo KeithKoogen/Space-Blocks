@@ -27,14 +27,6 @@ public class BlockArray_Script : MonoBehaviour
         SendArray.Invoke(blockArray);
 
 
-
-
-
-
-
-
-
-
     }
     void RemoveDestroyedBlockfromArray(int positionY, int positionX)
     {
